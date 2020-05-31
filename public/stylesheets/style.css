@@ -1,8 +1,49 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
 a {
   color: #00B7FF;
+  margin-left: 25px;
 }
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#cont, #info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 4fr 1fr;
+}
+
+#new-form {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+
+#show-flight, #enter-data, #destinations {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#new-destination {
+  display: grid;
+  justify-content: center;
+}
+

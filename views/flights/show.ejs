@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<section id="show-flight">
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <div>Flight Number: </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs on: </div>
+    <div><%= flight.departs %></div>
+</section>
+<section id="new-destination">
+    <br><br><h2>Destinations</h2>
+    <form id="enter-data" method="POST"
+      action="/flights/<%= flight.id %>/destinations">
+        <div>Airport: </div>
+        <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+        <div>Arrival: </div>
+        <input type="date" name="arrival">
+        <br><input type="submit" value="Add Destination">
+    </form>
+</section>
+<br><br><br>
+<section id="destinations">
+    <div>Airport</div>
+    <div>Arrival</div>
+</section>
+
+<%- include('../partials/footer') %>
