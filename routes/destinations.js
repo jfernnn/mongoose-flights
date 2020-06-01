@@ -4,5 +4,6 @@ const destinationsCtrl = require('../controllers/destinations');
 
 /* GET users listing. */
 router.post('/flights/:id/destinations', destinationsCtrl.create);
+router.delete('/flights/:id/destinations/:arrayId', destinationsCtrl.delete);
 
 module.exports = router;

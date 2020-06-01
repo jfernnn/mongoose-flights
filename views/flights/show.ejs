@@ -10,6 +10,12 @@
     <div>Departs on: </div>
     <div><%= flight.departs %></div>
 </section>
+<br><br><br>
+<section id="ticket">
+    <h2>Tickets</h2>
+    <a href="/flights/<%= flight.id %>/tickets"><button>Add Tickets</button></a>
+    <br><div>No Tickets Yet</div>
+</section>
 <section id="new-destination">
     <br><br><h2>Destinations</h2>
     <form id="enter-data" method="POST"
@@ -28,9 +34,31 @@
     </form>
 </section>
 <br><br><br>
-<section id="destinations">
-    <div>Airport</div>
-    <div>Arrival</div>
-</section>
+<table id="destinations">
+    <% if(flight.destinations.length !== 0) { %>
+        <thead>
+            <tr id="dest-header">
+                <th>Airport</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="dest-contents">
+                <% flight.destinations.forEach(function(d) { %>
+                    <td><%= d.airport %></td>
+                    <td><%= d.arrival %></td>
+                    <td>
+                        <form action="/flights/<%= flight.id %>/destinations/<%= d.id %>?_method=DELETE"
+                            class="delete-form" method="POST">
+                            <button id="delete-button" type="submit">X</button>
+                        </form>
+                    </td>
+                <% }) %>
+            </tr>
+        </tbody>
+    <% } else { %>
+        <div>No Destinations Yet Added</div>
+    <% } %>
+</table>
 
 <%- include('../partials/footer') %>
