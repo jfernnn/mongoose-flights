@@ -17,6 +17,12 @@
             <th><%= f.flightNo %></th>
             <th><%= f.departs %></th>
             <th><a href="/flights/<%= f.id %>"><button type="submit">Details</button></a></th>
+            <th>
+                <form action="/flights/<%= f.id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button id="delete-button" type="submit">X</button>
+                </form>
+            </th>
           </tr>
         <% }) %>
     </tbody>

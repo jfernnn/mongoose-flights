@@ -25,7 +25,7 @@ h1 {
 
 #cont, #info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 4fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 4fr 1fr 1fr;
 }
 
 #new-form {
@@ -63,4 +63,22 @@ h1 {
 #ticket {
   display: grid;
   justify-content: center;
+}
+
+#tickets {
+  margin: 0 auto;
+}
+
+#tickets {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+#tickets, #ticket-table-header, #ticket-table {
+  border: solid black;
+}
+
+#ticket-table-header {
+  font-size: 30px;
+  margin: 10px;
 }
